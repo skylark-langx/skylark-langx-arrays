@@ -1003,6 +1003,7 @@ define('skylark-langx-arrays/arrays',[
   "skylark-langx-objects"
 ],function(skylark,types,objects){
 	var filter = Array.prototype.filter,
+      find = Array.prototype.find,
 		isArrayLike = types.isArrayLike;
 
     /**
@@ -1186,6 +1187,10 @@ define('skylark-langx-arrays/arrays',[
         })
     }
 
+    function find(array,func) {
+      return find.call(array,func);
+    }
+
     return skylark.attach("langx.arrays",{
         baseFindIndex: baseFindIndex,
 
@@ -1202,6 +1207,8 @@ define('skylark-langx-arrays/arrays',[
         },
 
         filter : filter2,
+
+        find : find,
         
         flatten: flatten,
 
