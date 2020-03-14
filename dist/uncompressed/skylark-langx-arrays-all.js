@@ -1002,9 +1002,9 @@ define('skylark-langx-arrays/arrays',[
   "skylark-langx-types",
   "skylark-langx-objects"
 ],function(skylark,types,objects){
-	var filter = Array.prototype.filter,
+  var filter = Array.prototype.filter,
       find = Array.prototype.find,
-		isArrayLike = types.isArrayLike;
+    isArrayLike = types.isArrayLike;
 
     /**
      * The base implementation of `_.findIndex` and `_.findLastIndex` without
@@ -1187,7 +1187,7 @@ define('skylark-langx-arrays/arrays',[
         })
     }
 
-    function find(array,func) {
+    function find2(array,func) {
       return find.call(array,func);
     }
 
@@ -1208,7 +1208,7 @@ define('skylark-langx-arrays/arrays',[
 
         filter : filter2,
 
-        find : find,
+        find : find2,
         
         flatten: flatten,
 
