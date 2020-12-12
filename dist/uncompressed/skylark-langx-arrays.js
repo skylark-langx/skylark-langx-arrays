@@ -87,7 +87,7 @@
 })(function(define,require) {
 
 define('skylark-langx-arrays/arrays',[
-  "skylark-langx-ns/ns",
+  "skylark-langx-ns",
   "skylark-langx-types",
   "skylark-langx-objects"
 ],function(skylark,types,objects){
