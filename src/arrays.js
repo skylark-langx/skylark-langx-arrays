@@ -70,6 +70,10 @@ define([
         });
     }
 
+    function contains(array,item) {
+      return inArray(item,array);
+    }
+
     function filter2(array,func) {
       return filter.call(array,func);
     }
@@ -145,6 +149,12 @@ define([
       for (var i = 0; i < arr.length; i++) fn(arr[i], i);
     }
 
+
+    function first(arr) {
+        return arr[0];     
+    }
+
+    // Get the last element of an array. 
     function last(arr) {
         return arr[arr.length - 1];     
     }
@@ -207,6 +217,8 @@ define([
         
         compact: compact,
 
+        contains,
+
         first : function(items,n) {
             if (n) {
                 return items.slice(0,n);
@@ -218,7 +230,9 @@ define([
         filter : filter2,
 
         find : find2,
-        
+
+        first,
+
         flatten: flatten,
 
         grep: grep,
