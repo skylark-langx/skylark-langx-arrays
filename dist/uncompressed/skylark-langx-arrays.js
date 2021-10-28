@@ -89,8 +89,9 @@
 define('skylark-langx-arrays/arrays',[
   "skylark-langx-ns",
   "skylark-langx-types",
-  "skylark-langx-objects"
-],function(skylark,types,objects){
+  "skylark-langx-objects",
+  "skylark-langx-funcs/rest-arguments"
+],function(skylark,types,objects,restArguments){
     var filter = Array.prototype.filter,
         find = Array.prototype.find,
         isArrayLike = types.isArrayLike;
@@ -161,6 +162,16 @@ define('skylark-langx-arrays/arrays',[
     function contains(array,item) {
       return inArray(item,array);
     }
+
+
+    // Take the difference between one array and a number of other arrays.
+    // Only the elements present in just the first array will remain.
+    var difference  = restArguments(function(array, rest) {
+      rest = flatten(rest, true, true);
+      return filter2(array, function(value){
+        return !contains(rest, value);
+      });
+    });
 
     function filter2(array,func) {
       return filter.call(array,func);
@@ -238,8 +249,12 @@ define('skylark-langx-arrays/arrays',[
     }
 
 
-    function first(arr) {
-        return arr[0];     
+    function first(items,n) {
+      if (n) {
+          return items.slice(0,n);
+      } else {
+          return items[0];
+      }
     }
 
     // Get the last element of an array. 
@@ -298,6 +313,12 @@ define('skylark-langx-arrays/arrays',[
       return find.call(array,func);
     }
 
+
+    // Return a version of the array that does not contain the specified value(s).
+    var without = restArguments(function(array, otherArrays) {
+      return difference(array, otherArrays);
+    });
+
     return skylark.attach("langx.arrays",{
         baseFindIndex: baseFindIndex,
 
@@ -307,13 +328,7 @@ define('skylark-langx-arrays/arrays',[
 
         contains,
 
-        first : function(items,n) {
-            if (n) {
-                return items.slice(0,n);
-            } else {
-                return items[0];
-            }
-        },
+        difference,
 
         filter : filter2,
 
