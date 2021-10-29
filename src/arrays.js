@@ -2,8 +2,8 @@ define([
   "skylark-langx-ns",
   "skylark-langx-types",
   "skylark-langx-objects",
-  "skylark-langx-funcs/rest-arguments"
-],function(skylark,types,objects,restArguments){
+  "skylark-langx-funcs"
+],function(skylark,types,objects,funcs){
     var filter = Array.prototype.filter,
         find = Array.prototype.find,
         isArrayLike = types.isArrayLike;
@@ -78,7 +78,7 @@ define([
 
     // Take the difference between one array and a number of other arrays.
     // Only the elements present in just the first array will remain.
-    var difference  = restArguments(function(array, rest) {
+    var difference  = funcs.restArguments(function(array, rest) {
       rest = flatten(rest, true, true);
       return filter2(array, function(value){
         return !contains(rest, value);
@@ -227,7 +227,7 @@ define([
 
 
     // Return a version of the array that does not contain the specified value(s).
-    var without = restArguments(function(array, otherArrays) {
+    var without = funcs.restArguments(function(array, otherArrays) {
       return difference(array, otherArrays);
     });
 
