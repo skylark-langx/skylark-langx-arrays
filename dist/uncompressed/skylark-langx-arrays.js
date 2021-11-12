@@ -291,17 +291,6 @@ define('skylark-langx-arrays/first',[
 
     return arrays.first = first;
 });
-define('skylark-langx-arrays/for-each',[
-  "./arrays"
-],function(arrays){
-
-    function forEach (arr, fn) {
-      if (arr.forEach) return arr.forEach(fn)
-      for (var i = 0; i < arr.length; i++) fn(arr[i], i);
-    }
-
-	return arrays.forEach = forEach;
-});
 define('skylark-langx-arrays/grep',[
   "skylark-langx-objects",
   "./arrays"
@@ -497,7 +486,6 @@ define('skylark-langx-arrays/main',[
 	"./find",
 	"./first",
 	"./flatten",
-	"./for-each",
 	"./grep",
 	"./in-array",
 	"./indexof",

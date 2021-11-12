@@ -9,7 +9,6 @@ define([
 	"./find",
 	"./first",
 	"./flatten",
-	"./for-each",
 	"./grep",
 	"./in-array",
 	"./indexof",
