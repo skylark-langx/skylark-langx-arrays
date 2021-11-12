@@ -5,5 +5,5 @@
  * @link www.skylarkjs.org
  * @license MIT
  */
-define(["./arrays"],function(n){return n});
+define(["./arrays","./base-find-index","./base-indexof","./compact","./contains","./difference","./filter","./find","./first","./flatten","./for-each","./grep","./in-array","./indexof","./last","./make-array","./map","./merge","./pull-at","./reduce","./uniq","./without"],function(e){return e});
 //# sourceMappingURL=sourcemaps/main.js.map

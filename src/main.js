@@ -1,5 +1,26 @@
 define([
-	"./arrays"
+	"./arrays",
+	"./base-find-index",
+	"./base-indexof",
+	"./compact",
+	"./contains",
+	"./difference",
+	"./filter",
+	"./find",
+	"./first",
+	"./flatten",
+	"./for-each",
+	"./grep",
+	"./in-array",
+	"./indexof",
+	"./last",
+	"./make-array",
+	"./map",
+	"./merge",
+	"./pull-at",
+	"./reduce",
+	"./uniq",
+	"./without"
 ],function(arrays){
 	return arrays;
 });
