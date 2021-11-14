@@ -1,8 +1,9 @@
 define([
-  "./arrays"
-],function(arrays){
+	"skylark-langx-types",
+ 	"./arrays"
+],function(types,arrays){
     function makeArray(obj, offset, startWith) {
-       if (isArrayLike(obj) ) {
+       if (types.isArrayLike(obj) ) {
         return (startWith || []).concat(Array.prototype.slice.call(obj, offset || 0));
       }
 

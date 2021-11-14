@@ -5,5 +5,5 @@
  * @link www.skylarkjs.org
  * @license MIT
  */
-define(["./arrays"],function(r){return r.makeArray=function(r,a,e){return isArrayLike(r)?(e||[]).concat(Array.prototype.slice.call(r,a||0)):[r]}});
+define(["skylark-langx-types","./arrays"],function(r,a){return a.makeArray=function(a,e,n){return r.isArrayLike(a)?(n||[]).concat(Array.prototype.slice.call(a,e||0)):[a]}});
 //# sourceMappingURL=sourcemaps/make-array.js.map
