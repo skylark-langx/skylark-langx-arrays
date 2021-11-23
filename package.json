@@ -23,6 +23,10 @@
   "author": "Hudaokeji Co.,Ltd",
   "license": "MIT",
   "bugs": "https://github.com/skylarklangx/skylark-langx/issues",
+  "files": [
+    "dist/",
+    "skins/"
+  ],
   "dependencies": {
     "skylark-langx-funcs": "git+https://github.com/skylark-langx/skylark-langx-funcs.git",
     "skylark-langx-ns": "git+https://github.com/skylark-langx/skylark-langx-ns.git",

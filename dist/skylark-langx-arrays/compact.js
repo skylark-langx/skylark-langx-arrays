@@ -5,5 +5,5 @@
  * @link www.skylarkjs.org
  * @license MIT
  */
-define(["./arrays","./filter"],function(n,r){return n.compact=function(n){return r.call(n,function(n){return null!=n})}});
+define(["./arrays","./filter"],function(n,r){return n.compact=function(n){return r(n,function(n){return null!=n})}});
 //# sourceMappingURL=sourcemaps/compact.js.map
