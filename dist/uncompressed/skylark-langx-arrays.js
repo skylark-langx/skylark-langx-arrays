@@ -456,7 +456,7 @@ define('skylark-langx-arrays/uniq',[
 ],function(arrays,filter){
 
     function uniq(array) {
-        return filter.call(array, function(item, idx) {
+        return filter(array, function(item, idx) {
             return array.indexOf(item) == idx;
         })
     }
